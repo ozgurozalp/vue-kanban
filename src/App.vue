@@ -1,7 +1,9 @@
-<script setup lang="ts">
+<script setup>
+import Sections from '@/components/Sections.vue';
 </script>
 
 <template>
-  <h1>Hello Vue</h1>
+	<div class="container mx-auto h-screen p-4">
+		<Sections />
+	</div>
 </template>
-
