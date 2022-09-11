@@ -6,7 +6,6 @@ import { VueDraggableNext } from 'vue-draggable-next';
 import type { Section } from '@/types';
 
 import TaskCard from '@/components/TaskCard.vue';
-import IconPlus from '@/components/icons/IconPlus.vue';
 import IconTrash from '@/components/icons/IconTrash.vue';
 
 const props = defineProps<{
