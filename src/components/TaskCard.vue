@@ -1,3 +1,20 @@
+<script setup lang="ts">
+import IconEllipsis from '@/components/icons/IconEllipsis.vue';
+import IconBookmark from '@/components/icons/IconBookmark.vue';
+import type { Task } from '@/types';
+import { useStore } from '@/store';
+
+const props = defineProps<{
+	task: Task;
+}>();
+
+const store = useStore();
+
+function toggleFavorite() {
+	store.toggleFavorite(props.task.id);
+}
+</script>
+
 <template>
 	<article
 		class="relative grid h-[135px] w-full content-between justify-items-start rounded-[2px] bg-white p-[20px] shadow-[0_0_2px_rgba(118,96,126,0.45)]"
@@ -25,19 +42,3 @@
 		</div>
 	</article>
 </template>
-<script setup lang="ts">
-import IconEllipsis from '@/components/icons/IconEllipsis.vue';
-import IconBookmark from '@/components/icons/IconBookmark.vue';
-import type { Task } from '@/types';
-import { useStore } from '@/store';
-
-const props = defineProps<{
-	task: Task;
-}>();
-
-const store = useStore();
-
-function toggleFavorite() {
-	store.toggleFavorite(props.task.id);
-}
-</script>
