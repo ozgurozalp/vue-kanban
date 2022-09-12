@@ -9,5 +9,5 @@ module.exports = {
 			serif: ['"IBM Plex Sans"', ...defaultTheme.fontFamily.serif],
 		},
 	},
-	plugins: [],
+	plugins: [require('@tailwindcss/forms')],
 };
