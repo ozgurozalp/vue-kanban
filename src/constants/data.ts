@@ -107,11 +107,11 @@ export const customFields = [
 		compare_to: null,
 		compare_to_info: null,
 		compare_to_type: null,
-		created_at: '2021-05-10T17: 16: 30.974-04: 00',
+		created_at: '2021-05-10T17:16:30.974-04:00',
 		created_by_id: '5da37780ed9f271eb4d52a59',
 		created_by_type: 'User',
 		css_style: '6',
-		default_value: 'My New Title',
+		default_value: '',
 		description: 'Post Title Here..',
 		display_options: {
 			hide_at_display: false,
@@ -148,11 +148,15 @@ export const customFields = [
 		compare_to: null,
 		compare_to_info: null,
 		compare_to_type: null,
-		created_at: '2021-05-10T17: 24: 26.801-04: 00',
+		created_at: '2021-05-10T17:24:26.801-04:00',
 		created_by_id: '5da37780ed9f271eb4d52a59',
 		created_by_type: 'User',
 		css_style: '6',
-		default_value: 'default_value',
+		default_value: {
+			name: 'Category 1',
+			value: 'category_1',
+			id: '6099a48aa0d09600042696ce',
+		},
 		description: 'Post Category',
 		display_options: {
 			hide_at_display: false,
@@ -171,19 +175,16 @@ export const customFields = [
 		smart_ddl_items: [
 			{
 				name: 'Category 1',
-				styler: { disable: false, hide: false, id: '6099a48aa0d09600042696d2' },
 				value: 'category_1',
 				id: '6099a48aa0d09600042696ce',
 			},
 			{
 				name: 'Category 2',
-				styler: { disable: false, hide: false, id: '6099a48aa0d09600042696d3' },
 				value: 'category_2',
 				id: '6099a48aa0d09600042696cf',
 			},
 			{
 				name: 'Category 3',
-				styler: { disable: false, hide: false, id: '6099a48aa0d09600042696d4' },
 				value: 'category_3',
 				id: '6099a48aa0d09600042696d0',
 			},
@@ -209,7 +210,7 @@ export const customFields = [
 		compare_to: null,
 		compare_to_info: null,
 		compare_to_type: null,
-		created_at: '2021-05-10T17: 26: 41.180-04: 00',
+		created_at: '2021-05-10T17:26:41.180-04:00',
 		created_by_id: '5da37780ed9f271eb4d52a59',
 		created_by_type: 'User',
 		css_style: '6',
@@ -250,11 +251,11 @@ export const customFields = [
 		compare_to: null,
 		compare_to_info: null,
 		compare_to_type: null,
-		created_at: '2021-05-10T17: 27: 08.543-04: 00',
+		created_at: '2021-05-10T17:27:08.543-04:00',
 		created_by_id: '5da37780ed9f271eb4d52a59',
 		created_by_type: 'User',
 		css_style: '6',
-		default_value: 'default_value',
+		default_value: new Date().toISOString(),
 		description: 'Created Date',
 		display_options: {
 			hide_at_display: false,
@@ -291,7 +292,7 @@ export const customFields = [
 		compare_to: null,
 		compare_to_info: null,
 		compare_to_type: null,
-		created_at: '2021-05-10T17: 27: 20.835-04: 00',
+		created_at: '2021-05-10T17:27:20.835-04:00',
 		created_by_id: '5da37780ed9f271eb4d52a59',
 		created_by_type: 'User',
 		css_style: '12',
@@ -323,3 +324,5 @@ export const customFields = [
 		type_id: '',
 	},
 ];
+
+export type CustomField = typeof customFields;
