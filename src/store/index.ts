@@ -1,10 +1,10 @@
 import { ref } from 'vue';
 import { defineStore } from 'pinia';
-import { data } from '@/constants/data';
+import { data } from '@/constants';
 import { useLocalStorage } from '@vueuse/core';
 import type { Task } from '@/types';
 
-export const useStore = defineStore('kanbanStore', () => {
+export const useKanbanStore = defineStore('kanbanStore', () => {
 	const sections = ref(useLocalStorage('sections', data));
 
 	function addSection() {
@@ -41,4 +41,23 @@ export const useStore = defineStore('kanbanStore', () => {
 	}
 
 	return { sections, addSection, removeSection, updateSectionName, toggleFavorite };
+});
+
+export const usePostStore = defineStore('postStore', () => {
+	const posts = ref(useLocalStorage('posts', []));
+
+	function addPost(post: any) {
+		// @ts-ignore
+		posts.value.unshift(post);
+	}
+
+	function removePost(id: string) {
+		posts.value = posts.value.filter(post => Object.keys(post)[0] !== id);
+	}
+
+	return {
+		posts,
+		addPost,
+		removePost,
+	};
 });
