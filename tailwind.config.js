@@ -10,4 +10,10 @@ module.exports = {
 		},
 	},
 	plugins: [require('@tailwindcss/forms')],
+	safelist: [
+		{
+			pattern: /col-span-(\d)/,
+			variants: ['sm', 'md'],
+		},
+	],
 };
