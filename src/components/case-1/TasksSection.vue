@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue';
 import { onClickOutside } from '@vueuse/core';
-import { useStore } from '@/store';
+import { useKanbanStore } from '@/store';
 import { VueDraggableNext } from 'vue-draggable-next';
 import type { Section } from '@/types';
 
@@ -12,7 +12,7 @@ const props = defineProps<{
 	section: Section;
 }>();
 
-const store = useStore();
+const store = useKanbanStore();
 const clicked = ref(false);
 const sectionName = ref(props.section.sectionName);
 const targetInput = ref<HTMLInputElement | null>(null);
