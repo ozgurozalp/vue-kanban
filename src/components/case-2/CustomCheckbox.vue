@@ -5,6 +5,7 @@ defineProps<{
 	label?: string;
 	modelValue: string | boolean | number;
 	name?: string;
+	validator?: any;
 }>();
 </script>
 
@@ -16,9 +17,14 @@ defineProps<{
 				:name="name"
 				@change="$emit('update:modelValue', $event.target.checked)"
 				:value="modelValue"
+				:checked="modelValue"
+				@blur="validator.$touch()"
 			/>
-			{{ label }}
+			<span class="text-sm sm:text-xl"> {{ label }} </span>
 			<Info v-if="description" :text="description" />
+		</span>
+		<span class="text-sm text-red-500" v-if="validator.$dirty && validator.$invalid">
+			{{ validator.require.$message }}
 		</span>
 	</label>
 </template>
