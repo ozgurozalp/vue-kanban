@@ -2,13 +2,13 @@
 import IconEllipsis from '@/components/icons/IconEllipsis.vue';
 import IconBookmark from '@/components/icons/IconBookmark.vue';
 import type { Task } from '@/types';
-import { useStore } from '@/store';
+import { useKanbanStore } from '@/store';
 
 const props = defineProps<{
 	task: Task;
 }>();
 
-const store = useStore();
+const store = useKanbanStore();
 
 function toggleFavorite() {
 	store.toggleFavorite(props.task.id);
