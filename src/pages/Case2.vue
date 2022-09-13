@@ -1,11 +1,8 @@
-<template>
-	<FormBuilder :options="options" />
-</template>
 <script setup lang="ts">
-import { ref } from 'vue';
-
-import { customFields } from '@/constants/data';
-import FormBuilder from '@/components/case-2/FormBuilder.vue';
-
-const options = ref(customFields);
+import ShowPosts from '@/components/case-2/ShowPosts.vue';
 </script>
+
+<template>
+	<RouterLink :to="{ name: 'add-post' }" class="link mb-10 w-fit whitespace-nowrap text-3xl">Add Post</RouterLink>
+	<ShowPosts />
+</template>
