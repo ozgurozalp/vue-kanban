@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import TasksSection from '@/components/case-1/TasksSection.vue';
-import { useStore } from '@/store';
+import { useKanbanStore } from '@/store';
 import { VueDraggableNext } from 'vue-draggable-next';
 
-const store = useStore();
+const store = useKanbanStore();
 
 function addSection() {
 	store.addSection();
