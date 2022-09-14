@@ -6,8 +6,8 @@ import AddPost from '@/pages/AddPost.vue';
 import EditPost from '@/pages/EditPost.vue';
 
 const routes = [
-	{ path: '/', name: 'case-1', component: Home },
-	{ path: '/case-1', component: Case1 },
+	{ path: '/', name: 'home', component: Home },
+	{ path: '/case-1', name: 'case-1', component: Case1 },
 	{
 		path: '/case-2',
 		component: Case2,
