@@ -5,7 +5,7 @@ import Info from '@/components/case-2/Info.vue';
 const props = defineProps<{
 	label?: string;
 	description?: string;
-	modelValue: string | Date;
+	modelValue?: string | Date;
 	name?: string;
 	validator?: any;
 }>();

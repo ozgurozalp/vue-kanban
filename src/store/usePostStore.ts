@@ -37,6 +37,7 @@ export const usePostStore = defineStore('postStore', () => {
 
 	function fetchFields() {
 		getFields().then(res => {
+			console.log(res);
 			fields.value = res;
 		});
 	}

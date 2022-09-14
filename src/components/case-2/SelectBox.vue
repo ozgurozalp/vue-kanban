@@ -10,7 +10,7 @@ const props = defineProps<{
 			value: string;
 		}
 	];
-	modelValue: {
+	modelValue?: {
 		id: string;
 		name: string;
 		value: string;

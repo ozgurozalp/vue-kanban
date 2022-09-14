@@ -1,24 +1,29 @@
 <script setup lang="ts">
-import { reactive, computed } from 'vue';
+import { computed, onMounted, ref } from 'vue';
 import { useVuelidate } from '@vuelidate/core';
 import { required, helpers } from '@vuelidate/validators';
 import { prepareData } from '@/helpers';
 import { InputComponents } from '@/constants';
-import type { CustomField } from '@/constants';
-
-const props = defineProps<{
-	options: CustomField;
-}>();
-
+import { usePostStore } from '@/store';
 const emit = defineEmits(['submit']);
 
-const userData = reactive(prepareData(props.options));
+const props = defineProps<{
+	fields: any[];
+}>();
+const store = usePostStore();
+const userData = ref([]);
+
+onMounted(() => {
+	userData.value = prepareData(props.fields);
+	store.fetchFields();
+});
 
 const rules = computed(() => {
 	const require = helpers.withMessage('This field is required', required);
-	return props.options.reduce((acc, curr) => {
+	return props.fields.reduce((acc, curr) => {
 		return {
 			...acc,
+			// @ts-ignore
 			[`cf_${curr.id}`]: { ...(curr.is_required && { require }) },
 		};
 	}, {});
@@ -26,18 +31,19 @@ const rules = computed(() => {
 const v$ = useVuelidate(rules, userData);
 
 const sorted = computed(() => {
-	return props.options.sort((a, b) => a.order - b.order);
+	// @ts-ignore
+	return props.fields.sort((a, b) => a.order - b.order);
 });
 
 async function submit() {
 	if (!v$.value.$invalid) {
-		emit('submit', userData);
+		emit('submit', userData.value);
 	}
 }
 </script>
 
 <template>
-	<div class="grid grid-cols-12 gap-x-4 gap-y-2">
+	<div class="mx-auto grid w-full grid-cols-12 gap-x-4 gap-y-2 bg-white p-4 shadow md:w-6/12">
 		<div v-for="field in sorted" :key="field.id" :class="`col-span-12 sm:col-span-${field.css_style}`">
 			<Component
 				:data="field.smart_ddl_items"

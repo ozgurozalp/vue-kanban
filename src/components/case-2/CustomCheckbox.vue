@@ -3,7 +3,7 @@ import Info from '@/components/case-2/Info.vue';
 defineProps<{
 	description?: string;
 	label?: string;
-	modelValue: string | boolean | number;
+	modelValue?: string | boolean | number;
 	name?: string;
 	validator?: any;
 }>();

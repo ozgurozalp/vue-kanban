@@ -255,18 +255,18 @@
   ],
   "posts": [
     {
+      "id": "0bfacc94-ddc0-4445-892b-d7f8fdd5a2d0",
       "data": {
-        "cf_6099a2aea0d0960004268fd8": "sdaasd",
-        "cf_6099a52ca0d0960004269ca7": "2022-09-16",
+        "cf_6099a2aea0d0960004268fd8": "Özgür ÖZALP",
+        "cf_6099a52ca0d0960004269ca7": "2022-09-22",
         "cf_6099a48aa0d09600042696d1": {
-          "name": "Category 3",
-          "value": "category_3",
-          "id": "6099a48aa0d09600042696d0"
+          "name": "Category 2",
+          "value": "category_2",
+          "id": "6099a48aa0d09600042696cf"
         },
-        "cf_6099a538a0d0960004269e98": "dsas",
+        "cf_6099a538a0d0960004269e98": "Deneme",
         "cf_6099a511a0d0960004269ab6": true
-      },
-      "id": "da0de044-6226-48e3-9f59-b98b6ff59f63"
+      }
     }
   ]
 }

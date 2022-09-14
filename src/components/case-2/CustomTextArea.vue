@@ -4,7 +4,7 @@ defineProps<{
 	description?: string;
 	label?: string;
 	placeholder?: string;
-	modelValue: string | boolean | number;
+	modelValue?: string | boolean | number;
 	name?: string;
 	validator?: any;
 }>();
