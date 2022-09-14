@@ -1,15 +1,25 @@
 <template>
-	<section class="grid gap-4 md:grid-cols-3" v-if="store.posts.length > 0">
-		<Post v-for="(post, i) in store.posts" :post="post" :key="i" />
+	<section class="grid gap-4 md:grid-cols-3" v-if="Object.keys(posts).length > 0">
+		<Post v-for="(post, i) in posts" :key="i" :post="post" :post-id="getId(i)" />
 	</section>
 	<section v-else>
-		<p class="text-center text-2xl text-red-500">No posts found. Click to 'Add Post' button to add post</p>
+		<p class="rounded bg-white p-4 text-center text-2xl text-red-500">
+			<span class="mb-4 block">No Posts Found !!!</span>
+			Click to 'Add Post' button to add post
+		</p>
 	</section>
 </template>
 
 <script setup lang="ts">
+import Post from '@/components/case-2/Post.vue';
+import { computed, watch } from 'vue';
 import { usePostStore } from '@/store';
 
 const store = usePostStore();
-import Post from '@/components/case-2/Post.vue';
+const getId = (index: number) => Object.keys(store.posts)[index];
+
+const posts = computed(() => {
+	// @ts-ignore
+	return Object.values(store.posts);
+});
 </script>
