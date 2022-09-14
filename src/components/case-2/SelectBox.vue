@@ -40,7 +40,10 @@ function changeHandler(event: InputEvent) {
 					{{ option.name }}
 				</option>
 			</select>
-			<span v-if="modelValue?.value" class="absolute left-3 top-1/2 z-10 -translate-y-1/2 bg-white">
+			<span
+				v-if="modelValue?.value"
+				class="pointer-events-none absolute left-3 top-1/2 z-10 -translate-y-1/2 bg-white"
+			>
 				{{ modelValue.name }}
 			</span>
 		</span>
