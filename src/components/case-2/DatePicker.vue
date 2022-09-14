@@ -37,7 +37,7 @@ function openPicker() {
 			@click="openPicker"
 			type="date"
 			:name="name"
-			@input="$emit('update:modelValue', new Date($event.target.value))"
+			@input="$emit('update:modelValue', $event.target.value)"
 			:value="value"
 			@blur="validator.$touch()"
 		/>
